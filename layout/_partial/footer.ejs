@@ -2,7 +2,13 @@
   <div class="footer-content">
     <%- theme.footer.content %>
   </div>
-  <%- partial('_partial/statistics.ejs') %>
+  <!-- 网易云音乐插件 -->
+  <% if (theme.music && theme.music.enable == true){ %>
+    <div style="position:absolute; bottom:120px left:auto; width:100%">
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="240" height="52" src="//music.163.com/outchain/player?type=2&id=<%=theme.music.id||1334445174%>&auto=<%=theme.music.autoplay?1:0%>&height=32"></iframe>
+    </div>
+  <% } %>
+ <%- partial('_partial/statistics.ejs') %>
   <%- partial('_partial/beian.ejs') %>
   <% if(theme.web_analytics.cnzz) { %>
     <!-- cnzz Analytics Icon -->
